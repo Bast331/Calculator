@@ -65,9 +65,7 @@
     box-shadow: 2px 2px black ;
 }
 
-.buttn:hover {
 
-}
 
 .button_bigger {
     height: 2.5rem;
@@ -83,18 +81,43 @@
 }
 
 .button_Number {
-    background-color: darkgray;
+    background-color: rgb(169, 169, 169);
     color: white;
 }
 
+.button_Number:focus {
+    background-color: rgb(109, 109, 109);
+    box-shadow: none;
+    /* border: 2px solid black; */
+}
+
 .button_Tool {
-    background-color: orange;
+    background-color: rgb(252, 164, 2);
+}
+
+.button_Tool:focus {
+    box-shadow: none;
+    background-color: rgb(192, 104, 2);
 }
 
 .button_Clear {
-    background-color: red;
+    background-color: rgb(255, 0, 0);
 }
 
-.button_Back, .button_point, .button_Plus-minus {
-    background-color: orangered;
+.button_Clear:focus {
+    background-color: rgb(195, 0, 0);
+    box-shadow: none;
+}
+
+.button_Back, .button_point, .button_toMinus{
+    background-color: rgb(255, 69, 0);
+}
+
+.button_Back:focus, .button_point:focus, .button_toMinus:focus {
+    background-color: rgb(195, 69, 0);
+    box-shadow: none;
+}
+
+.button_toMinus {
+    font-size: 0.55rem;
 }
