@@ -1,16 +1,13 @@
-// declare all variables (to null, so the different scenarios are solved: iif null then calculator behaves like it 
-// just loaded)
 let result = null;
 let number1 = null;
 let number2 = null;
 let operator = null;
 
-// if an operator/ equal is clicked the screen on Display should be cleared
 let displayNew = true;
-// dont allow multiple points (.) in one number
+
 let point = false;
-// to set minus before a number, but you shouldnt overwrite the whole screen if you wrote a number and then pressed the neg button
-let neg = false;
+
+let setMinusbeforeNumber = false;
 
 
 const Display = document.getElementById("displayShow");
@@ -120,7 +117,7 @@ buttons.querySelectorAll(".operator").forEach((button) => {
             if(number1 == undefined) {
                 operator = `${button.value}`;
                 number1 = result;
-                neg = false;
+                setMinusbeforeNumber = false;
                 return
             }
             
@@ -131,7 +128,7 @@ buttons.querySelectorAll(".operator").forEach((button) => {
         number2 = null;
         operator = `${button.value}`;
         displayNew= true;
-        neg = false;
+        setMinusbeforeNumber = false;
         return
         }
 
@@ -139,14 +136,14 @@ buttons.querySelectorAll(".operator").forEach((button) => {
         number1 = parseFloat(Display.textContent);
         operator = `${button.value}`;
         displayNew = true;
-        neg = false;
+        setMinusbeforeNumber = false;
     })
 })
 
 
 equal.addEventListener("click", () => {
     if(operator == null) {
-        neg = false;
+        setMinusbeforeNumber = false;
         return
     }
     point = false;
@@ -157,10 +154,10 @@ equal.addEventListener("click", () => {
     number2 = null;
     operator = null;
     displayNew = true;
-    neg = false;
+    setMinusbeforeNumber = false;
 })
 
-// event Listener for clearing the Screen: set all variables to initial situation
+
 clear.addEventListener("click", () => {
     Display.textContent = '';
     result = null;
@@ -208,10 +205,10 @@ negativeNumber.addEventListener("click", () => {
         return 
     }
     // after operator or equal is pressed you should be able to set next number negative
-    else if(operator !== null && neg == false || result !== null && neg == false) {
+    else if(operator !== null && setMinusbeforeNumber == false || result !== null && setMinusbeforeNumber == false) {
         if(Display.textContent == number1 || Display.textContent == result) {
             Display.textContent = '-';
-            neg = true;
+            setMinusbeforeNumber = true;
             return 
         }
        else {
