@@ -190,6 +190,9 @@ dotButton.addEventListener("click", () => {
     else if(operator !== null && Display.textContent == number1) {
         return
     }
+    else if(Display.textContent == result) {
+        return
+    }
 
     Display.textContent = `${Display.textContent}.`
     point = true;
