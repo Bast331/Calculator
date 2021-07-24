@@ -14,6 +14,7 @@
     width: 15rem;
     height: 25rem;
     background: gray;
+    box-shadow: 5px 5px black;
 }
 
 
@@ -27,12 +28,15 @@
     border-radius: 10px;
     display: flex;
     justify-content: flex-end;
+    box-shadow: 2px 2px black
 }
 
 .displayShow{ 
     font-size: 1.8rem;
     margin-top: 0.5rem;
     padding-right: 0.3rem;
+    padding-left: 0.3rem;
+    
 }
 
 .buttonContainer {
@@ -48,7 +52,7 @@
     
 }
 
-.button {
+.buttn {
     height: 2.5rem;
     width: 3rem;
     margin-top: 0.25rem;
@@ -58,6 +62,11 @@
     border: 1px solid black;
     box-sizing: border-box;
     border-radius: 10px;
+    box-shadow: 2px 2px black ;
+}
+
+.buttn:hover {
+
 }
 
 .button_bigger {
@@ -70,6 +79,7 @@
     border: 1px solid black;
     box-sizing: border-box;
     border-radius: 10px;
+    box-shadow: 2px 2px black
 }
 
 .button_Number {
