@@ -24,7 +24,7 @@ I plan to add keyboard-support to the project in the near future.
 <!-- If it is an app: how to install -->
 <!-- How to Use: -->
 ## How to use and more
-To use the Calculator use this [link.]()
+To use the Calculator use this [link.](https://bast331.github.io/Calculator/)
 <!--    Demo: -->
 
 <!--    Features that stand out: -->
@@ -44,8 +44,8 @@ experienced any problems, while using the calculator.
 <!-- Reflections: -->
 ## Reflections
 <!-- 1.) Why did I make this project and what was my motivation: -->
-I did this project in the course of "the Odin Project". [here]() you can check out the
-course and [here]() the specific project I wanted to make.
+I did this project in the course of "the Odin Project". [here](https://www.theodinproject.com/home) you can check out the
+course and [here](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator) the specific project I wanted to make.
 <!-- 2.) What problem does it solve? -->
 The Calculator is able to solve simple Math problems, like
     adding to numbers 
@@ -80,7 +80,7 @@ I hope I gave you some interesting insight in the project.
 
 ## Credits
 <!-- Credits: -->
-[Here]() again the credit to TOP, that makes it possible for me to learn Coding well structured, with a cool community and much fun.
+[Here](https://www.theodinproject.com/home) again the credit to TOP, that makes it possible for me to learn Coding well structured, with a cool community and much fun.
 The person I got the most inspired from is [Mr_Starkk](https://github.com/Mr-Starkk/). 
 You can find his project [here](https://mr-starkk.github.io/Calculator/).
 
