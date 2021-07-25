@@ -14,10 +14,11 @@ the problem, that it should not evaluate more than a single pair of numbers at a
 If you enter a number then an operator and another number that calculation should be displayed 
 if your next input is an operator. This result should be used as the first number in the new calculation.
 With some inspiration by other projects it finally worked. In the credits I link the project from
-Mr_Starkk (Github) that helped me probably the most, because it was really similar structured to my code.
+Mr_Starkk (Github) in the Credits. That helped me probably the most, because it was really similar structured to my code.
+The next challenge was that if I wanted to let the User input more numbers, than the Display could handle. So I tried some time and find a way to count the digits to stop putting more than nine digits for a number. And if the result would be too big, the font-size of the Display would become smaller.
 If there are any bugs or problems please let me know, so I wiill be able to update this project and make
 it better.
-I don't have the plan to implement more features in the near future. 
+I plan to add keyboard-support to the project in the near future. 
 
 <!-- Optional: Table if the README is very long -->
 <!-- If it is an app: how to install -->
@@ -32,12 +33,16 @@ The most unique feature is, that you can use negative numbers when you want. You
 just have to press the "negative Number" Button then you will see a minus before your digits. 
 This just works if you haven't clicked on any digits before. So you have to start by clicking the 
 "negative Number" button and cannot change the algebraic sign when you tiped it already in.
+You cannot type more than nine digits for a number, because the display can`t handle more. If the result becomes more than 9 digits the font size from the display becomes smaller, so you can input larger numbers. 
+At some point it shows the number in scientific notation.
+Also every Calculation will be rounded after the third decimal.
 <!--    Known Bugs -->
 ### Bugs
 At the moment I am not aware of any bugs. Please let me know through discord 'Bast#9425' if you 
 experienced any problems, while using the calculator.
+
 <!-- Reflections: -->
-## Reflcetions
+## Reflections
 <!-- 1.) Why did I make this project and what was my motivation: -->
 I did this project in the course of "the Odin Project". [here]() you can check out the
 course and [here]() the specific project I wanted to make.

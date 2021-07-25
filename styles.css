@@ -109,9 +109,19 @@
     box-shadow: none;
 }
 
+.Image_BackArrow {
+    height: 2rem;
+    width: 3rem;
+    position: relative;
+    right: 0.2rem;
+    top: 0.2rem;
+    
+}
+
 .button_Back, .button_point, .button_toMinus{
     background-color: rgb(255, 69, 0);
 }
+
 
 .button_Back:focus, .button_point:focus, .button_toMinus:focus {
     background-color: rgb(195, 69, 0);

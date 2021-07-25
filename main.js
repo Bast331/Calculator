@@ -9,6 +9,9 @@ let point = false;
 
 let setMinusbeforeNumber = false;
 
+let countHowOftenADigitPressed = 0;
+let countDigitsOfResult = 0;
+
 
 const Display = document.getElementById("displayShow");
 const buttons = document.getElementById("buttonContainer");
@@ -22,25 +25,29 @@ const negativeNumber = document.querySelector('.button_toMinus');
 
 function addition(a, b) {
     result = a + b;
-    return result;
+    return result = Math.round((a+b)*1000) / 1000;
 
 }
 
 function subtraction(a, b) {
     result = a - b;
-    return result;
+    return result = Math.round((a-b)*1000) / 1000;
     
 }
 
 function multiplication(a, b) {
     result = a * b;
-    return result = Math.round((a*b)*1000000) / 1000000;
+    return result = Math.round((a*b)*1000) / 1000;
   
 }
 
 function division(a, b) {
+    if(b == 0) {
+        return "ERROR: don't divide by 0"
+    }
     result = a / b;
-    return result = Math.round((a/b)*1000000) / 1000000;
+
+    return result = Math.round((a/b)*1000) / 1000;
 }
 
 
@@ -49,6 +56,7 @@ function operate(operator, numberOne, numberTwo) {
 
     if(operator == "+") {
         return addition(numberOne, numberTwo);
+        
     }
     else if(operator == "-") {
         return subtraction(numberOne, numberTwo);
@@ -81,7 +89,7 @@ buttons.querySelectorAll(".digit").forEach((button) => {
                 else{
                     Display.textContent = '';
                 }
-                
+                Display.style.fontSize = "1.8rem";
                 number1 = null;
                 number2 = null;
                 operator = null;
@@ -99,8 +107,13 @@ buttons.querySelectorAll(".digit").forEach((button) => {
         
         displayNew = false;
         }
-         
+        if(countHowOftenADigitPressed == 9) {
+            console.log("Display max erreicht")
+             return Display.textContent = Display.textContent;
+         }
+
         Display.textContent += `${button.value}`;
+        countHowOftenADigitPressed++;
     })
 })
 
@@ -118,6 +131,7 @@ buttons.querySelectorAll(".operator").forEach((button) => {
                 operator = `${button.value}`;
                 number1 = result;
                 setMinusbeforeNumber = false;
+                countHowOftenADigitPressed = 0;
                 return
             }
             
@@ -129,6 +143,7 @@ buttons.querySelectorAll(".operator").forEach((button) => {
         operator = `${button.value}`;
         displayNew= true;
         setMinusbeforeNumber = false;
+        countHowOftenADigitPressed = 0;
         return
         }
 
@@ -137,6 +152,7 @@ buttons.querySelectorAll(".operator").forEach((button) => {
         operator = `${button.value}`;
         displayNew = true;
         setMinusbeforeNumber = false;
+        countHowOftenADigitPressed = 0;
     })
 })
 
@@ -144,17 +160,34 @@ buttons.querySelectorAll(".operator").forEach((button) => {
 equal.addEventListener("click", () => {
     if(operator == null) {
         setMinusbeforeNumber = false;
+        countHowOftenADigitPressed = 0;
         return
     }
     point = false;
     number2 = parseFloat(Display.textContent);
     result = operate(operator, number1, number2);
+
+    console.log(typeof(result));
+    for(let i=0; i < result.toString().length; i++){
+        console.log("im loop")
+        countDigitsOfResult++;
+        console.log(countDigitsOfResult);
+    }
+    
+    if(countDigitsOfResult >= 10) {
+        Display.style.fontSize = "0.9rem";
+    }
+
     Display.textContent = result;
     number1 = undefined;
     number2 = null;
     operator = null;
     displayNew = true;
     setMinusbeforeNumber = false;
+    countHowOftenADigitPressed = 0;
+    countDigitsOfResult = 0;
+
+   
 })
 
 
@@ -164,12 +197,21 @@ clear.addEventListener("click", () => {
     number1 = null;
     number2 = null;
     operator = null;
+    countHowOftenADigitPressed = 0;
+    Display.style.fontSize = "1.8rem";
     return
 })
 
 
 back.addEventListener("click", () => {
+    if(Display.textContent == result) {
+        return
+    }
+    if(Display.textContent == number1) {
+        return
+    }
     Display.textContent = Display.textContent.slice(0, -1);
+    countHowOftenADigitPressed--;
 })
 
 dotButton.addEventListener("click", () => {
